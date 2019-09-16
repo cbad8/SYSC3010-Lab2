@@ -26,8 +26,11 @@ public class UDPReceiver {
 		        System.out.println( "Receiving on port " + port ) ;
 		        DatagramPacket packet = new DatagramPacket( new byte[PACKETSIZE], PACKETSIZE ) ;
 	            socket.receive( packet ) ;
-
 	            System.out.println( packet.getAddress() + " " + packet.getPort() + ": " + new String(packet.getData()).trim() ) ;
+	            
+	            System.out.println("Echoing Back: ");
+       		 	DatagramPacket packet2 = new DatagramPacket(new String(packet.getData(), packet.getData().length, packet.getAddress(), packet.getPort());
+       		 	socket.send( packet ) ;
 	        }  
 	     }
 	     catch( Exception e )
